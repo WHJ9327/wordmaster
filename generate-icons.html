@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>点击按钮下载图标</h2>
+<button onclick="gen(192)">下载 192x192</button>
+<button onclick="gen(512)">下载 512x512</button>
+<canvas id="c" style="display:none"></canvas>
+<script>
+function gen(s){
+  var c=document.getElementById('c');c.width=s;c.height=s;
+  var x=c.getContext('2d');
+  // Rounded rect background
+  var r=s*0.15;x.fillStyle='#409EFF';
+  x.beginPath();x.moveTo(r,0);x.lineTo(s-r,0);x.quadraticCurveTo(s,0,s,r);
+  x.lineTo(s,s-r);x.quadraticCurveTo(s,s,s-r,s);x.lineTo(r,s);
+  x.quadraticCurveTo(0,s,0,s-r);x.lineTo(0,r);x.quadraticCurveTo(0,0,r,0);
+  x.closePath();x.fill();
+  // Letter W
+  x.fillStyle='white';x.font='bold '+Math.round(s*0.55)+'px Arial';
+  x.textAlign='center';x.textBaseline='middle';
+  x.fillText('W',s/2,s*0.45);
+  // 词
+  x.font='bold '+Math.round(s*0.16)+'px Arial';
+  x.fillText('词',s/2,s*0.78);
+  // Download
+  var a=document.createElement('a');a.download='icon-'+s+'.png';
+  a.href=c.toDataURL('image/png');a.click();
+}
+</script>
+</body>
+</html>
