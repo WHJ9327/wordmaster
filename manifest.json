@@ -1,0 +1,33 @@
+{
+  "name": "WordMaster - 智能单词背诵",
+  "short_name": "WordMaster",
+  "description": "科学背单词，高效记忆每一个单词",
+  "start_url": "/wordmaster/",
+  "scope": "/wordmaster/",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#409EFF",
+  "orientation": "any",
+  "categories": ["education"],
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/wordmaster/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/wordmaster/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/wordmaster/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
